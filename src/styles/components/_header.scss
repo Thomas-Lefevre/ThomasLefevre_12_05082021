@@ -1,0 +1,22 @@
+.header {
+    padding: 1% 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    z-index: 1;
+    height: 7%;
+    &__nav {
+        width: 80%;
+        display: flex;
+        align-items: center;
+
+        &__ul {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pageContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pageContainer {
+  height: 100%;
+}
+
+.main {
+  margin: 5% 5% 0 15%;
+  height: 100%;
+}
+
+.information {
+  display: flex;
+  height: 73%;
+  justify-content: space-between;
+}
+.information__chart {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: space-between;
+}
+.information__chart__multiple {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.information__chart__multiple__SessionDurationChart {
+  width: 33%;
+}
+.information__chart__multiple__RadarChart {
+  width: 33%;
+}
+.information__chart__multiple__Score {
+  width: 33%;
+}
+
+.header {
+  padding: 1% 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  z-index: 1;
+  height: 7%;
+}
+.header__nav {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+.header__nav__ul {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.welcome__hello {
+  font-size: 48px;
+  font-weight: 500;
+}
+.welcome__hello__name {
+  color: red;
+}
+.welcome__goal {
+  font-size: 18px;
+  margin: 1% 0 5%;
+}
+
+.activity {
+  width: 100%;
+  height: 60%;
+  background-color: gray;
+}
+
+.menu {
+  background-color: black;
+  width: 8%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+}
+.menu__nav {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.menu__copyright {
+  position: absolute;
+  transform: rotate(-90deg);
+  color: white;
+  bottom: 10%;
+  font-size: 12px;
+  width: 150px;
+}
+
+.radarChart {
+  width: 100%;
+  max-width: 260px;
+  margin: auto;
+  background-color: red;
+}
+.radarChart::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.score {
+  width: 100%;
+  max-width: 260px;
+  margin-left: auto;
+  background-color: red;
+}
+.score::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.sessionDurationChart {
+  width: 100%;
+  max-width: 260px;
+  background-color: red;
+}
+.sessionDurationChart::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.statistics__card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FBFBFB;
+  padding: 30px 50px 30px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+.statistics__card__icone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 20px;
+}
+.statistics__card__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  padding-left: 25px;
+}
+.statistics__card__text__value {
+  color: #282D30;
+  font-size: 20px;
+  font-weight: 700;
+}
+.statistics__card__text__p {
+  color: #74798C;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.iconeCalories {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.iconeProteines {
+  background-color: #4AB8FF1A;
+}
+
+.iconeGlucides {
+  background-color: rgba(249, 206, 35, 0.1);
+}
+
+.iconeLipides {
+  background-color: #FD51811A;
+}
+
+/*# sourceMappingURL=style.css.map */

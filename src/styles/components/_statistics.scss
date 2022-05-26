@@ -1,0 +1,60 @@
+.statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        background-color: $backgroundGray;
+        padding: 30px 50px 30px 30px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+
+        &__icone {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 6px;
+            padding: 20px
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;
+            padding-left: 25px;
+
+            &__value {
+                color: $chartBlack;
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            &__p {
+                color: $textGray;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    ;
+}
+
+.iconeCalories {
+    background-color: $backgroundIconeCalories;
+}
+
+.iconeProteines {
+    background-color: $backgroundIconeProteines;
+}
+
+.iconeGlucides {
+    background-color: $backgroundIconeGlucides;
+}
+
+.iconeLipides {
+    background-color: $backgroundIconeLipides;
+}

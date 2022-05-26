@@ -1,0 +1,35 @@
+.pageContainer {
+    height: 100%;
+}
+
+.main {
+    margin: 5% 5% 0 15%;
+    height: 100%;
+}
+
+.information {
+    display: flex;
+    height: 73%;
+    justify-content: space-between;
+    &__chart{
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        justify-content: space-between;
+        &__multiple{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            &__SessionDurationChart{
+                width: 33%;
+            }
+            &__RadarChart{
+                width: 33%;
+            }
+            &__Score{
+                width: 33%;
+            }
+        }
+    }
+}

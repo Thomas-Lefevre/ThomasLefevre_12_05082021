@@ -1,0 +1,14 @@
+.welcome {
+    &__hello {
+        font-size: 48px;
+        font-weight: 500;
+        &__name {
+            color: red;
+        }
+    }
+
+    &__goal {
+        font-size: 18px;
+        margin: 1% 0 5%;
+    }
+}

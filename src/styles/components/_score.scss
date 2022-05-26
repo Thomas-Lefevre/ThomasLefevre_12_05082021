@@ -1,0 +1,11 @@
+.score {
+    width: 100%;
+    max-width: 260px;
+    margin-left: auto;
+    background-color: red;
+    &::after{
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
