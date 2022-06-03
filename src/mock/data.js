@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const USER_MAIN_DATA = [
     {
         id: 12,

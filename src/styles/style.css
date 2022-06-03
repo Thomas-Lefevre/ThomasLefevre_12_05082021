@@ -33,13 +33,13 @@ a {
 }
 
 .main {
-  margin: 5% 5% 0 15%;
+  margin: 3% 5% 0 15%;
   height: 100%;
 }
 
 .information {
   display: flex;
-  height: 73%;
+  height: 77%;
   justify-content: space-between;
 }
 .information__chart {
@@ -95,13 +95,37 @@ a {
 }
 .welcome__goal {
   font-size: 18px;
-  margin: 1% 0 5%;
+  margin: 1% 0 2%;
 }
 
 .activity {
   width: 100%;
   height: 60%;
-  background-color: gray;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+  position: relative;
+}
+.activity__h2 {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  font-size: 15px;
+  font-weight: 500;
+}
+.activity__tooltip {
+  background-color: red;
+  font-size: 7px;
+  font-weight: 500;
+  color: white;
+  padding: 7px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.activity__legend {
+  color: #74798C;
 }
 
 .menu {
@@ -133,8 +157,16 @@ a {
 .radarChart {
   width: 100%;
   max-width: 260px;
+  height: 100%;
   margin: auto;
-  background-color: red;
+  background-color: #282D30;
+  border-radius: 5px;
+  position: relative;
+}
+.radarChart__chart {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 .radarChart::after {
   content: "";
@@ -145,8 +177,39 @@ a {
 .score {
   width: 100%;
   max-width: 260px;
+  height: 100%;
+  position: relative;
   margin-left: auto;
-  background-color: red;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}
+.score__chart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.score__chart__legend {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.score__chart__legend__percent {
+  font-size: 26px;
+  font-weight: 700;
+}
+.score__chart__legend__p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #74798C;
+}
+.score__h2 {
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  top: 10%;
+  left: 10%;
 }
 .score::after {
   content: "";
@@ -157,7 +220,30 @@ a {
 .sessionDurationChart {
   width: 100%;
   max-width: 260px;
+  height: 100%;
   background-color: red;
+  border-radius: 5px;
+  position: relative;
+}
+.sessionDurationChart__chart {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.sessionDurationChart__h2 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 60%;
+}
+.sessionDurationChart__tooltip {
+  background-color: white;
+  font-size: 8px;
+  font-weight: 500;
+  padding: 7px;
 }
 .sessionDurationChart::after {
   content: "";

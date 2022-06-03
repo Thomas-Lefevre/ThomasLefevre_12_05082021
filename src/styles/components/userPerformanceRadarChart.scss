@@ -1,0 +1,20 @@
+.radarChart {
+    width: 100%;
+    max-width: 260px;
+    height: 100%;
+    margin: auto;
+    background-color: $chartBlack;
+    border-radius: 5px;
+    position: relative;
+    &__chart {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
