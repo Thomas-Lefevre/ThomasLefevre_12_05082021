@@ -1,4 +1,5 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import PropTypes  from "prop-types"
 
 function Score({ userScore }) {
 
@@ -57,3 +58,7 @@ function Score({ userScore }) {
     )
 }
 export default Score;
+
+Score.propTypes={
+    userScore: PropTypes.object.isRequired
+}

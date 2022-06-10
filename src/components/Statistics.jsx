@@ -2,6 +2,7 @@ import iconCalories from "../assets/iconCalories.svg"
 import iconProteines from "../assets/iconProteines.svg"
 import iconGlucides from "../assets/iconGlucides.svg"
 import iconLipides from "../assets/iconLipides.svg"
+import PropTypes from "prop-types"
 
 function Statistics({ keyData }) {
     const calories = keyData.calorieCount + "kCal"
@@ -50,3 +51,7 @@ function Statistics({ keyData }) {
     )
 }
 export default Statistics;
+
+Statistics.propTypes={
+    keyData: PropTypes.object.isRequired
+}

@@ -1,4 +1,5 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import PropTypes from "prop-types"
 
 function userPerformanceRadarChart({ userPerformance }) {
 
@@ -56,3 +57,7 @@ function userPerformanceRadarChart({ userPerformance }) {
     )
 }
 export default userPerformanceRadarChart;
+
+userPerformanceRadarChart.propTypes={
+    userPerformance: PropTypes.array.isRequired
+}
