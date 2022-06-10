@@ -6,8 +6,8 @@ import SessionDurationChart from "../components/SessionDurationChart";
 import UserPerformanceRadarChart from "../components/userPerformanceRadarChart";
 import Score from "../components/Score";
 import Statistics from "../components/Statistics";
-import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../mock/data"
 import { useEffect, useState } from "react";
+// import mockData from "../services/fetchMock";
 import fetchData from "../services/fetchApi";
 import { useNavigate, useParams } from "react-router-dom"
 
@@ -25,8 +25,20 @@ function Home() {
 
   useEffect(() => {
 
+    //Mocked Data
+    // const userData = mockData(id, "main")
+    // setUserData(userData)
 
+    // const userActivity = mockData(id, "activity")
+    // setUserActivity(userActivity)
 
+    // const userAverageSessions = mockData(id, "average-sessions")
+    // setUserAverageSessions(userAverageSessions)
+
+    // const userPerformance = mockData(id, "performance")
+    // setUserPerformance(userPerformance)
+
+    //Fetch Data
     fetchData(id)
       .then(data => setUserData(data))
       .catch(err => console.log("Erreur lors de la récupération des données", err))
