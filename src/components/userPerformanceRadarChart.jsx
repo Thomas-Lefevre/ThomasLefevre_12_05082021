@@ -2,6 +2,12 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 function userPerformanceRadarChart({ userPerformance }) {
 
+
+    /**
+     * Format XAxis ticks in french
+     * @param {string} kind english labels
+     * @returns french labels
+     */
     const renderPerformanceCategories = (kind) => {
 
         switch (kind) {
@@ -15,14 +21,20 @@ function userPerformanceRadarChart({ userPerformance }) {
         }
     }
 
-    function reverseData(array){
+
+    /**
+     * Reverse order the data from array
+     * @param {array} array 
+     * @returns reversed array
+     */
+    function reverseData(array) {
         const dataReversedArray = []
-        for(let i=array.length - 1; i >= 0; i --){
+        for (let i = array.length - 1; i >= 0; i--) {
             dataReversedArray.push(array[i])
         }
         return dataReversedArray
     }
-    
+
     const dataReversed = reverseData(userPerformance)
 
     return (

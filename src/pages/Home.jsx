@@ -6,32 +6,71 @@ import SessionDurationChart from "../components/SessionDurationChart";
 import UserPerformanceRadarChart from "../components/userPerformanceRadarChart";
 import Score from "../components/Score";
 import Statistics from "../components/Statistics";
-import data from "../mock/data"
+import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../mock/data"
+import { useEffect, useState } from "react";
+import fetchData from "../services/fetchApi";
+import { useNavigate, useParams } from "react-router-dom"
 
 function Home() {
-  // console.log(data);
+
+  const { id } = useParams()
+  // const navigate = useNavigate()
+
+  const [userData, setUserData] = useState()
+  const [userActivity, setUserActivity] = useState()
+  const [userAverageSessions, setUserAverageSessions] = useState()
+  const [userPerformance, setUserPerformance] = useState()
+
+  // fetchData(18).then(data => console.log(data)).catch((err) => console.log("Erreur", err))
+
+  useEffect(() => {
+
+
+
+    fetchData(id)
+      .then(data => setUserData(data))
+      .catch(err => console.log("Erreur lors de la récupération des données", err))
+
+    fetchData(id, "activity")
+      .then(data => setUserActivity(data))
+      .catch(err => console.log("Erreur lors de la récupération des données", err))
+
+    fetchData(id, "average-sessions")
+      .then(data => setUserAverageSessions(data))
+      .catch(err => console.log("Erreur lors de la récupération des données", err))
+
+    fetchData(id, "performance")
+      .then(data => setUserPerformance(data))
+      .catch(err => console.log("Erreur lors de la récupération des données", err))
+
+  }, [id])
+
+  if ((!userData) || (!userActivity) || (!userAverageSessions) || (!userPerformance)) {
+    return null
+  }
+
   return (
     <div className="pageContainer">
       <Header />
       <Menu />
       <div className="main">
-        <Welcome name={data.USER_MAIN_DATA[0].userInfos.firstName} />
+        <Welcome name={userData.data.userInfos.firstName} />
         <div className="information">
           <div className="information__chart">
-            <Activity userActivityData={data.USER_ACTIVITY[0].sessions}/>
+            <Activity userActivityData={userActivity.data.sessions} />
             <section className="information__chart__multiple">
               <div className="information__chart__multiple__SessionDurationChart">
-                <SessionDurationChart averageSessionsData={data.USER_AVERAGE_SESSIONS[0].sessions}/>
+                <SessionDurationChart averageSessionsData={userAverageSessions.data.sessions} />
               </div>
               <div className="information__chart__multiple__RadarChart">
-                <UserPerformanceRadarChart  userPerformance={data.USER_PERFORMANCE[0].data}/>
+                <UserPerformanceRadarChart userPerformance={userPerformance.data.data} />
               </div>
               <div className="information__chart__multiple__Score">
-                <Score userScore={data.USER_MAIN_DATA[0]}/>
+                <Score userScore={userData.data} />
               </div>
             </section>
           </div>
-          <Statistics keyData={data.USER_MAIN_DATA[0].keyData} />
+          <Statistics keyData={userData.data.keyData} />
         </div>
       </div>
     </div>

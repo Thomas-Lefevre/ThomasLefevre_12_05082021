@@ -1,6 +1,12 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 function SessionDurationChart({ averageSessionsData }) {
 
+
+    /**
+     * Format XAxis ticks
+     * @param {Number} day day of the week
+     * @returns letter of the day
+     */
     const renderXAxisLetter = (day) => {
         switch (day) {
             case 1: return 'L';
@@ -13,6 +19,13 @@ function SessionDurationChart({ averageSessionsData }) {
             default: return '';
         }
     }
+
+    /**
+     * Create Tooltip
+     * @param {array} payload data
+     * @param {boolean} active is Tootip active
+     * @returns value when the line is pointed
+     */
     function tooltipSessionDurationChart({ payload, active }) {
         if (active) {
             return (

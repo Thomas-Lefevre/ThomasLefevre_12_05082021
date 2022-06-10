@@ -4,11 +4,18 @@ import './styles/style.css';
 import Home from './pages/Home';
 import "@fontsource/roboto";
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route, Navigate  } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/user/:id' element={<Home />} />
+        {/* <Route path='*' element={<Error404 />} /> */}
+        <Route path='/' element={ <Navigate to ="/user/12"/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

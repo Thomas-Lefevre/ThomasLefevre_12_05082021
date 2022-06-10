@@ -2,11 +2,24 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 function Activity({ userActivityData }) {
 
+
+    /**
+     * Get the day in the full date
+     * @param {string} value full date
+     * @returns {number {1-31} } day
+     */
     const renderXAxisNumber = (day) => {
         const dayNumber = day.split('-')
 
         return (Number(dayNumber[2]))
     }
+
+    /**
+     * Create Tooltip
+     * @param {array} payload data
+     * @param {boolean} active is Tootip active
+     * @returns value on hover
+     */
     function TooltipActivity({ payload, active }) {
         if (active) {
             return (

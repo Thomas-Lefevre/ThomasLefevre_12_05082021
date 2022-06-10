@@ -2,6 +2,11 @@ import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from '
 
 function Score({ userScore }) {
 
+    /**
+     * Format data into 'score'
+     * @param {object} data 
+     * @returns data
+     */
     function formatScore(data) {
         if (data.todayScore) {
             data.score = data.todayScore
@@ -11,6 +16,12 @@ function Score({ userScore }) {
     }
     formatScore(userScore)
 
+
+    /**
+     * Format the score in percentage
+     * @param {object} data 
+     * @returns integer for percentage
+     */
     function calculatePercent(data) {
         const score = Number(data.score)
 

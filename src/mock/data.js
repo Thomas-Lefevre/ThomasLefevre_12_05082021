@@ -1,5 +1,4 @@
-/* eslint-disable import/no-anonymous-default-export */
-const USER_MAIN_DATA = [
+export const USER_MAIN_DATA = [
     {
         id: 12,
         userInfos: {
@@ -32,7 +31,7 @@ const USER_MAIN_DATA = [
     }
 ]
 
-const USER_ACTIVITY = [
+export const USER_ACTIVITY = [
     {
         userId: 12,
         sessions: [
@@ -116,7 +115,7 @@ const USER_ACTIVITY = [
 ]
 
 
-const USER_AVERAGE_SESSIONS = [
+export const USER_AVERAGE_SESSIONS = [
     {
         userId: 12,
         sessions: [
@@ -186,7 +185,7 @@ const USER_AVERAGE_SESSIONS = [
 ]
 
 
-const USER_PERFORMANCE = [
+export const USER_PERFORMANCE = [
     {
         userId: 12,
         kind: {
@@ -262,12 +261,3 @@ const USER_PERFORMANCE = [
         ]
     }
 ]
-
-
-
-export default {
-    USER_MAIN_DATA,
-    USER_ACTIVITY,
-    USER_AVERAGE_SESSIONS,
-    USER_PERFORMANCE
-}
