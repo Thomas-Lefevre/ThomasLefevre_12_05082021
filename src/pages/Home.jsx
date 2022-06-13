@@ -14,29 +14,30 @@ import { useNavigate, useParams } from "react-router-dom"
 function Home() {
 
   const { id } = useParams()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const [userData, setUserData] = useState()
   const [userActivity, setUserActivity] = useState()
   const [userAverageSessions, setUserAverageSessions] = useState()
   const [userPerformance, setUserPerformance] = useState()
 
-  // fetchData(18).then(data => console.log(data)).catch((err) => console.log("Erreur", err))
 
   useEffect(() => {
 
     //Mocked Data
-    // const userData = mockData(id, "main")
-    // setUserData(userData)
+    // const currentUserData = mockData(id, "main")
+    // const currentUserActivity = mockData(id, "activity")
+    // const currentUserAverageSessions = mockData(id, "average-sessions")
+    // const currentUserPerformance = mockData(id, "performance")
 
-    // const userActivity = mockData(id, "activity")
-    // setUserActivity(userActivity)
+    // if (!currentUserData.data || !currentUserActivity.data || !currentUserAverageSessions.data || !currentUserPerformance.data) {
+    //   navigate('/Error')
+    // }
 
-    // const userAverageSessions = mockData(id, "average-sessions")
-    // setUserAverageSessions(userAverageSessions)
-
-    // const userPerformance = mockData(id, "performance")
-    // setUserPerformance(userPerformance)
+    // setUserData(currentUserData)
+    // setUserActivity(currentUserActivity)
+    // setUserAverageSessions(currentUserAverageSessions)
+    // setUserPerformance(currentUserPerformance)
 
     //Fetch Data
     fetchData(id)
@@ -55,9 +56,9 @@ function Home() {
       .then(data => setUserPerformance(data))
       .catch(err => console.log("Erreur lors de la récupération des données", err))
 
-  }, [id])
+  }, [id, navigate])
 
-  if ((!userData) || (!userActivity) || (!userAverageSessions) || (!userPerformance)) {
+  if (!userData || !userActivity || !userAverageSessions || !userPerformance) {
     return null
   }
 

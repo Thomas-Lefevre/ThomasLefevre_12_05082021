@@ -305,4 +305,40 @@ a {
   background-color: #FD51811A;
 }
 
+.error__404 {
+  margin: 175px auto 55px;
+  width: fit-content;
+  font-size: 288px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 1200px) {
+  .error__404 {
+    font-size: 200px;
+    margin: 190px auto 10px;
+  }
+}
+.error__phrase {
+  font-size: 36px;
+  margin: 0 auto 80px;
+  width: fit-content;
+}
+@media only screen and (max-width: 1200px) {
+  .error__phrase {
+    margin: 0 auto 70px;
+    font-size: 28px;
+    width: 70%;
+    text-align: center;
+  }
+}
+.error__link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 18px;
+  color: red;
+}
+.error__link:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=style.css.map */
