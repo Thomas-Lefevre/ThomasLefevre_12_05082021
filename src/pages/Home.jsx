@@ -7,7 +7,7 @@ import UserPerformanceRadarChart from "../components/userPerformanceRadarChart";
 import Score from "../components/Score";
 import Statistics from "../components/Statistics";
 import { useEffect, useState } from "react";
-// import mockData from "../services/fetchMock";
+// import fetchData from "../services/fetchMock";
 import fetchData from "../services/fetchApi";
 import { useNavigate, useParams } from "react-router-dom"
 
@@ -24,37 +24,29 @@ function Home() {
 
   useEffect(() => {
 
-    //Mocked Data
-    // const currentUserData = mockData(id, "main")
-    // const currentUserActivity = mockData(id, "activity")
-    // const currentUserAverageSessions = mockData(id, "average-sessions")
-    // const currentUserPerformance = mockData(id, "performance")
-
-    // if (!currentUserData.data || !currentUserActivity.data || !currentUserAverageSessions.data || !currentUserPerformance.data) {
-    //   navigate('/Error')
-    // }
-
-    // setUserData(currentUserData)
-    // setUserActivity(currentUserActivity)
-    // setUserAverageSessions(currentUserAverageSessions)
-    // setUserPerformance(currentUserPerformance)
-
-    //Fetch Data
     fetchData(id)
-      .then(data => setUserData(data))
-      .catch(err => console.log("Erreur lors de la récupération des données", err))
+      .then(data => {
+        if (typeof data.data !== 'undefined') {
+          setUserData(data)
 
-    fetchData(id, "activity")
-      .then(data => setUserActivity(data))
-      .catch(err => console.log("Erreur lors de la récupération des données", err))
+          fetchData(id, "activity")
+            .then(data => setUserActivity(data))
+            .catch(err => console.log("Erreur lors de la récupération des données activity", err))
 
-    fetchData(id, "average-sessions")
-      .then(data => setUserAverageSessions(data))
-      .catch(err => console.log("Erreur lors de la récupération des données", err))
+          fetchData(id, "average-sessions")
+            .then(data => setUserAverageSessions(data))
+            .catch(err => console.log("Erreur lors de la récupération des données average-sessions", err))
 
-    fetchData(id, "performance")
-      .then(data => setUserPerformance(data))
-      .catch(err => console.log("Erreur lors de la récupération des données", err))
+          fetchData(id, "performance")
+            .then(data => setUserPerformance(data))
+            .catch(err => console.log("Erreur lors de la récupération des données performance", err))
+
+        } else {
+          navigate('/Error')
+        }
+      })
+      .catch(err => console.log("Erreur lors de la récupération des données de l'id", err))
+
 
   }, [id, navigate])
 

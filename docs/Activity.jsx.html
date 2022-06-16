@@ -1,4 +1,32 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Activity.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Activity.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import PropTypes  from "prop-types"
 
 function Activity({ userActivityData }) {
@@ -24,38 +52,38 @@ function Activity({ userActivityData }) {
     function TooltipActivity({ payload, active }) {
         if (active) {
             return (
-                <div className='activity__tooltip'>
-                    <div>{`${payload[0].value}`}kg</div>
-                    <div>{`${payload[1].value}`}Kcal</div>
-                </div>
+                &lt;div className='activity__tooltip'>
+                    &lt;div>{`${payload[0].value}`}kg&lt;/div>
+                    &lt;div>{`${payload[1].value}`}Kcal&lt;/div>
+                &lt;/div>
             )
         }
         return null
     }
     return (
-        <section className="activity">
-            <h2 className='activity__h2'>Activité quotidienne</h2>
-            <ResponsiveContainer width="100%" height="100%" >
-                <BarChart
+        &lt;section className="activity">
+            &lt;h2 className='activity__h2'>Activité quotidienne&lt;/h2>
+            &lt;ResponsiveContainer width="100%" height="100%" >
+                &lt;BarChart
                     data={userActivityData}
                     margin={{
                         top: 30, right: 25, left: 25, bottom: 30
                     }}
                 >
-                    <CartesianGrid vertical='false' strokeDasharray='3' height={1} horizontalPoints={[90, 185]} />
-                    <XAxis className='activityXAxis'
+                    &lt;CartesianGrid vertical='false' strokeDasharray='3' height={1} horizontalPoints={[90, 185]} />
+                    &lt;XAxis className='activityXAxis'
                         dataKey='day'
                         tickFormatter={renderXAxisNumber}
                         interval='preserveStartEnd'
                         tickSize='0'
                         tickMargin='25'
                         stroke='#9B9EAC' />
-                    <YAxis
+                    &lt;YAxis
                         dataKey='calories'
                         yAxisId='left'
                         orientation='left'
                         hide='true' />
-                    <YAxis className='activityYAxis'
+                    &lt;YAxis className='activityYAxis'
                         dataKey='kilogram'
                         yAxisId='right'
                         orientation='right'
@@ -67,34 +95,56 @@ function Activity({ userActivityData }) {
                         tickMargin='30'
                         width={45}
                         stroke='#9B9EAC' />
-                    <Tooltip content={<TooltipActivity />} />
-                    <Legend
+                    &lt;Tooltip content={&lt;TooltipActivity />} />
+                    &lt;Legend
                         verticalAlign='top'
                         align='right'
                         height={80}
                         iconType='circle'
                         iconSize={8}
                         formatter={(value) => (
-                            <span className='activity__legend'>{value}</span>)} />
-                    <Bar name='Poids (kg)'
+                            &lt;span className='activity__legend'>{value}&lt;/span>)} />
+                    &lt;Bar name='Poids (kg)'
                         dataKey='kilogram'
                         yAxisId='right'
                         fill='#282D30'
                         radius={[3, 3, 0, 0]}
                         barSize={7} />
-                    <Bar name='Calories brûlées (kCal)'
+                    &lt;Bar name='Calories brûlées (kCal)'
                         dataKey='calories'
                         yAxisId='left'
                         fill='#E60000'
                         radius={[3, 3, 0, 0]}
                         barSize={7} />
-                </BarChart>
-            </ResponsiveContainer>
-        </section>
+                &lt;/BarChart>
+            &lt;/ResponsiveContainer>
+        &lt;/section>
     )
 }
 export default Activity;
 
 Activity.propTypes={
     userActivityData: PropTypes.array.isRequired
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu Jun 16 2022 16:00:57 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
