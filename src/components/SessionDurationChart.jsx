@@ -1,6 +1,11 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import PropTypes from "prop-types"
 
+    /**
+     * Make session duration chart
+     * @param {array} averageSessionsData average session data
+     * @returns session duration chart
+     */
 function SessionDurationChart({ averageSessionsData }) {
 
 

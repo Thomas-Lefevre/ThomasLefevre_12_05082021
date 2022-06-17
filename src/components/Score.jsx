@@ -1,6 +1,12 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import PropTypes  from "prop-types"
 
+/**
+ * Make score chart
+ * @param {object} userScore user data
+ * @returns score chart
+ */
+
 function Score({ userScore }) {
 
     /**

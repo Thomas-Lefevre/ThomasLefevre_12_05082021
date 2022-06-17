@@ -48,3 +48,9 @@ The API only contain two users, so there is only two Url possible:
 `http://localhost:3001/user/12`
 
 `http://localhost:3001/user/18`
+
+### Documentation 
+
+The documentation of the project can be find here:
+
+`https://thomas-lefevre.github.io/ThomasLefevre_12_05082021/`

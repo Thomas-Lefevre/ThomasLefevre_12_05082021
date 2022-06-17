@@ -1,6 +1,11 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import PropTypes  from "prop-types"
 
+    /**
+     * Make activity chart
+     * @param {array} userActivityData activity data
+     * @returns activity chart
+     */
 function Activity({ userActivityData }) {
 
 
